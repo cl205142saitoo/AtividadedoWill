@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self';">
+ 
+  <title>Painel de Controle</title>
+  <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="overflow-hidden bg-light">
+  <div class="container-fluid vh-100 d-flex p-0">
+    <div class="bg-dark text-white p-3 d-flex flex-column shadow z-2" style="width: 250px">
+      <h3 class="text-success fw-bold mb-0">Entregas</h3>
+      <hr />
+    </div>
+
+    <div class="flex-grow-1 d-flex flex-column bg-light">
+      <header class="bg-white border-bottom p-3 d-flex justify-content-between align-items-center shadow-sm z-1">
+        <h4 class="m-0 text-secondary">Painel de Controle</h4>
+        <span class="badge bg-secondary p-2">Admin</span>
+      </header>
+
+        <h5 class="mb-3 mt-4">Entregas</h5>
+
+
+
+
+        <div class="d-flex gap-2 mb-3">
+          <button class="btn btn-outline-secondary" id="btnExportarRelatorio">
+            Exportar Relatório
+          </button>
+          <button class="btn btn-outline-primary" id="btnExportarBackup">
+            Exportar Backup
+          </button>
+          <button class="btn btn-outline-success" id="btnImportarBackup">
+            Importar Backup
+          </button>
+        </div>
+       
+
+
+
+
+
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Destinatário</th>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>CEP</th>
+              <th>Endereço</th>
+              <th>Data de Entrega</th>
+              <th colspan="2">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyEntregas"></tbody>
+        </table>
+      </main>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modalConfirmarExclusaoEntrega" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirmar exclusão</h5>
+        </div>
+        <div class="modal-body">
+          <p>
+            Tem certeza que deseja excluir a entrega
+            <strong id="nomeEntregaExcluir"></strong>?
+            <br />
+            Essa ação não pode ser desfeita.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">
+            Cancelar
+          </button>
+          <button class="btn btn-danger" id="btnConfirmarExclusaoEntrega">
+            Excluir
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/frmPrincipal.js"></script>
+</body>
+
+</html>
